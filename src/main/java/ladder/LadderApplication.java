@@ -27,14 +27,14 @@ public class LadderApplication {
     }
 
     private static void drawUserResult(LadderGameResult ladderResult, GameStatus gameStatus) {
-        User inputUser = new User(InputView.inputUserName());
+        String inputUser = InputView.inputUserName();
 
-        if( ResultView.isContinueGame(inputUser.name()) == false )
+        if( ResultView.isContinueGame(inputUser) == false )
         {
             gameStatus.stop();
         }
 
-        ResultView.showResultReward(inputUser.name(), ladderResult);
+        ResultView.showResultReward(inputUser, ladderResult);
 
     }
 }
